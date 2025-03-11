@@ -18,7 +18,7 @@ import re
 import traceback
 from glob import glob
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Union  # type: ignore
+from typing import Any, Dict, List, Optional, Type, Union  # type: ignore
 
 from robot.api.logger import console  # type: ignore
 from robot.libraries.BuiltIn import BuiltIn  # type: ignore
@@ -1357,7 +1357,7 @@ class DataDriver:
         lineterminator: str = "\r\n",
         *,
         sheet_name: Union[str, int] = 0,
-        reader_class: Optional[Union[AbstractReaderClass, str]] = None,
+        reader_class: Optional[Union[Type[AbstractReaderClass], str]] = None,
         file_search_strategy: str = "PATH",
         file_regex: str = r"(?i)(.*?)(\.csv)",
         include: Optional[str] = None,
